@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#f5f7f4" />
+    <title>TaskFlow | Work, in motion</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="app-shell">
+      <aside class="sidebar" id="sidebar">
+        <div class="brand"><span class="brand-mark">T</span><span>taskflow</span></div>
+        <div class="workspace-switcher"><span class="workspace-dot"></span><span><b>Acme Studio</b><small>Design &amp; Product</small></span><span class="chevron">⌄</span></div>
+        <nav class="primary-nav" aria-label="Main navigation">
+          <a class="nav-item active" href="#dashboard"><span class="nav-icon">⌂</span>Overview</a>
+          <a class="nav-item" href="#tasks"><span class="nav-icon">▤</span>My tasks <span class="nav-count">8</span></a>
+          <a class="nav-item" href="#projects"><span class="nav-icon">◫</span>Projects</a>
+          <a class="nav-item" href="#team"><span class="nav-icon">♧</span>Team</a>
+          <a class="nav-item" href="#reports"><span class="nav-icon">◒</span>Reports</a>
+        </nav>
+        <div class="nav-label">Workspace</div>
+        <nav class="secondary-nav" aria-label="Workspace navigation">
+          <a class="nav-item" href="#inbox"><span class="nav-icon">◌</span>Inbox <span class="nav-count unread">3</span></a>
+          <a class="nav-item" href="#settings"><span class="nav-icon">⚙</span>Settings</a>
+        </nav>
+        <div class="sidebar-bottom"><div class="upgrade-note"><span class="spark">✦</span><b>Make work flow.</b><small>Invite your team and keep momentum.</small><button class="text-button">Invite teammates <span>→</span></button></div><div class="profile"><div class="avatar avatar-blue">AM</div><span><b>Alex Morgan</b><small>Product Designer</small></span><button class="more-button" aria-label="Profile options">•••</button></div></div>
+      </aside>
+      <main class="main-content" id="dashboard">
+        <header class="topbar"><button class="mobile-menu" id="menuButton" aria-label="Open menu">☰</button><div class="breadcrumb"><span>Workspace</span><span>/</span><b>Overview</b></div><div class="top-actions"><button class="icon-button" aria-label="Search">⌕</button><button class="icon-button notification-button" id="notificationButton" aria-label="Notifications">♢<i></i></button><div class="avatar avatar-blue small-avatar">AM</div></div></header>
+        <div class="content-wrap">
+          <section class="page-heading"><div><p class="eyebrow">Thursday, August 27, 2026</p><h1>Good morning, Alex <span class="wave">✦</span></h1><p class="heading-copy">Here&apos;s the pulse of your work today.</p></div><button class="primary-button" id="newTaskButton"><span>+</span> New task</button></section>
+          <section class="metric-grid" aria-label="Task summary">
+            <article class="metric-card accent-green"><div class="metric-top"><span class="metric-label">My open tasks</span><span class="metric-symbol">↗</span></div><strong>08</strong><span class="metric-change positive">↑ 12% <em>vs last week</em></span><div class="mini-bars"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i class="high"></i><i class="high"></i><i class="high"></i></div></article>
+            <article class="metric-card accent-yellow"><div class="metric-top"><span class="metric-label">Due this week</span><span class="metric-symbol">◷</span></div><strong>05</strong><span class="metric-change neutral">2 due today</span><div class="deadline-line"><span style="width:68%"></span></div><small class="metric-foot">68% of weekly capacity</small></article>
+            <article class="metric-card accent-coral"><div class="metric-top"><span class="metric-label">Overdue</span><span class="metric-symbol">!</span></div><strong>02</strong><span class="metric-change negative">↑ 1 <em>since yesterday</em></span><div class="overdue-dots"><i></i><i></i><i></i><i></i><i></i></div></article>
+            <article class="metric-card accent-blue"><div class="metric-top"><span class="metric-label">Completion rate</span><span class="metric-symbol">◔</span></div><strong>74<small>%</small></strong><span class="metric-change positive">↑ 8% <em>vs last month</em></span><div class="ring-chart"><span>74%</span></div></article>
+          </section>
+          <section class="dashboard-grid">
+            <div class="tasks-panel panel" id="tasks"><div class="panel-heading"><div><h2>My tasks</h2><p>Work that needs your attention</p></div><button class="ghost-button" id="viewAllButton">View all <span>→</span></button></div><div class="task-tabs" role="tablist"><button class="tab active" data-filter="all">All <b>8</b></button><button class="tab" data-filter="in-progress">In progress <b>4</b></button><button class="tab" data-filter="pending">Pending <b>2</b></button><button class="tab" data-filter="completed">Completed <b>2</b></button></div><div class="task-list" id="taskList"></div></div>
+            <aside class="right-column"><section class="panel activity-panel"><div class="panel-heading"><div><h2>Activity</h2><p>Recent updates from your team</p></div><button class="more-button">•••</button></div><div class="activity-list"><div class="activity-item"><div class="avatar avatar-coral">SC</div><div><p><b>Sarah Chen</b> commented on <strong>Mobile onboarding</strong></p><time>12 min ago</time></div></div><div class="activity-item"><div class="avatar avatar-yellow">JR</div><div><p><b>Jordan Reed</b> completed <strong>Design system audit</strong></p><time>1 hr ago</time></div></div><div class="activity-item"><div class="avatar avatar-purple">NK</div><div><p><b>Nina Kim</b> uploaded a file to <strong>Q3 research</strong></p><time>3 hrs ago</time></div></div><div class="activity-item"><div class="avatar avatar-blue">AM</div><div><p>You moved <strong>Pricing page refresh</strong> to in progress</p><time>Yesterday</time></div></div></div><button class="activity-footer">See all activity <span>→</span></button></section><section class="panel upcoming-panel"><div class="panel-heading"><div><h2>Upcoming</h2><p>Your next deadlines</p></div><button class="more-button">•••</button></div><div class="calendar-date"><b>Aug</b><strong>27</strong><span>Thursday</span><i>Today</i></div><div class="upcoming-task"><span class="priority-dot coral"></span><div><b>Finalize pricing page</b><small>Due today · 4:00 PM</small></div><span class="task-progress">70%</span></div><div class="upcoming-task"><span class="priority-dot yellow"></span><div><b>Prepare user interview script</b><small>Due tomorrow</small></div><span class="task-progress">25%</span></div></section></aside>
+          </section>
+        </div>
+      </main>
+    </div>
+    <div class="modal-backdrop" id="modalBackdrop" hidden><section class="modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle"><button class="modal-close" id="closeModal" aria-label="Close">×</button><p class="eyebrow">Create something new</p><h2 id="modalTitle">New task</h2><form id="taskForm"><label>Task title<input name="title" required placeholder="What needs to be done?" /></label><label>Description<textarea name="description" placeholder="Add a little context..."></textarea></label><div class="form-row"><label>Priority<select name="priority"><option>Medium</option><option>Low</option><option>High</option><option>Critical</option></select></label><label>Due date<input name="due" type="date" required /></label></div><div class="modal-actions"><button type="button" class="ghost-button" id="cancelModal">Cancel</button><button class="primary-button" type="submit">Create task</button></div></form></section></div>
+    <div class="toast" id="toast" role="status"></div>
+    <script src="app.js"></script>
+  </body>
+</html>

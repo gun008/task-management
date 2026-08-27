@@ -1,0 +1,8 @@
+import mongoose from 'mongoose';
+
+const userSchema = new mongoose.Schema({ name: { type: String, required: true, trim: true }, email: { type: String, required: true, unique: true, lowercase: true }, passwordHash: { type: String, required: true }, role: { type: String, enum: ['Admin', 'Manager', 'Team Member'], default: 'Team Member' }, isActive: { type: Boolean, default: true } }, { timestamps: true });
+const taskSchema = new mongoose.Schema({ title: { type: String, required: true, trim: true }, description: String, assignedBy: { type: mongoose.Schema.Types.ObjectId, ref: 'User', required: true }, assignedTo: { type: mongoose.Schema.Types.ObjectId, ref: 'User', required: true }, priority: { type: String, enum: ['Low', 'Medium', 'High', 'Critical'], default: 'Medium' }, status: { type: String, enum: ['Pending', 'In Progress', 'On Hold', 'Completed', 'Cancelled'], default: 'Pending' }, progress: { type: Number, min: 0, max: 100, default: 0 }, startDate: Date, dueDate: Date, tags: [String], completedAt: Date }, { timestamps: true });
+const activitySchema = new mongoose.Schema({ taskId: { type: mongoose.Schema.Types.ObjectId, ref: 'Task', required: true }, userId: { type: mongoose.Schema.Types.ObjectId, ref: 'User', required: true }, action: String, field: String, oldValue: String, newValue: String }, { timestamps: true });
+export const User = mongoose.model('User', userSchema);
+export const Task = mongoose.model('Task', taskSchema);
+export const Activity = mongoose.model('Activity', activitySchema);
