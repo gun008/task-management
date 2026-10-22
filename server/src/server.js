@@ -7,7 +7,9 @@ import { Activity, Task, User } from './models.js';
 import { issueToken, requireAuth } from './auth.js';
 
 const app = express();
-app.use(cors());
+app.use(cors({
+    alllowOrigin: '*',
+}));
 app.use(express.json());
 
 app.get('/api/health', (_req, res) => res.json({ status: 'ok', service: 'taskflow-api' }));
